@@ -4,7 +4,7 @@ var gutil = require('gulp-util'),
        pp = require('ssp-preprocessor');
 
 function preprocessor(file, options, cb) {
-	if(options == null) return cb(null, pp(file, []));
+	if(options == undefined) return cb(null, pp(file, []));
 	return cb(null, pp(file, options.conditions).join('\n'));
 }
 
